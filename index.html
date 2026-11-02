@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Die Tageschronik – Nachrichten</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+    color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ZEITUNGSKOPF */
+
+header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.topline {
+    max-width: 1150px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+}
+
+.logo {
+    text-align: center;
+    padding: 20px 10px 25px;
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 6vw, 55px);
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: #bd2026;
+}
+
+nav {
+    background: #171717;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HAUPTBEREICH */
+
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 22px;
+}
+
+.fiction {
+    background: #9e171d;
+    color: white;
+    text-align: center;
+    padding: 11px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+.category {
+    color: #bd2026;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 6vw, 62px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    max-width: 950px;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    font-family: Georgia, serif;
+    font-size: clamp(19px, 2.5vw, 25px);
+    color: #555;
+    line-height: 1.4;
+    max-width: 850px;
+    margin-bottom: 25px;
+}
+
+.author {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* BILDER */
+
+.hero-image {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    font-size: 13px;
+    color: #666;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.4;
+}
+
+/* ARTIKEL */
+
+.article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+    gap: 55px;
+    margin-top: 35px;
+}
+
+.article-text {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.article-text p {
+    margin-bottom: 22px;
+}
+
+.article-text p:first-child::first-letter {
+    font-size: 55px;
+    float: left;
+    line-height: 0.9;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+.article-text strong {
+    font-weight: bold;
+}
+
+.sidebar {
+    border-left: 1px solid #ddd;
+    padding-left: 25px;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #bd2026;
+    padding-bottom: 10px;
+}
+
+.sidebar img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.bottom-image {
+    margin-top: 35px;
+}
+
+.bottom-image img {
+    width: 100%;
+    display: block;
+}
+
+footer {
+    margin-top: 60px;
+    background: #171717;
+    color: #ccc;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* TABLET UND SMARTPHONE */
+
+@media (max-width: 700px) {
+
+    nav {
+        gap: 15px;
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        margin-top: 20px;
+        padding: 0 16px;
+    }
+
+    .article-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #ddd;
+        padding: 20px 0 0;
+    }
+
+    .sidebar img {
+        max-width: 450px;
+    }
+
+    .article-text {
+        font-size: 18px;
+    }
+
+    .author {
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="topline">
+        <span>Montag, 2. November</span>
+        <span>Digitale Ausgabe</span>
+    </div>
+
+    <div class="logo">
+        DIE <span>TAGESCHRONIK</span>
+    </div>
+
+    <nav>
+        <a href="#">Startseite</a>
+        <a href="#">Nachrichten</a>
+        <a href="#">Region</a>
+        <a href="#">Gesellschaft</a>
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <div class="fiction">
+        FIKTIVER ARTIKEL · SATIRE / FILMREQUISTIT · KEINE ECHTE NACHRICHT
+    </div>
+
+    <div class="category">
+        SCHULE · FIKTIVE EREIGNISSE
+    </div>
+
+    <h1>
+        Selbstmord an Marie-Curie Gymnasium
+    </h1>
+
+    <div class="subtitle">
+        Schüsse in der Aula sorgen für einen Großeinsatz.
+        Schüler und Lehrer stehen unter Schock. Die Hintergründe
+        des fiktiven Vorfalls bleiben zunächst ungeklärt.
+    </div>
+
+    <div class="author">
+        <span>Von der Redaktion</span>
+        <span>Montag, 2. November</span>
+    </div>
+
+
+    <!-- ERSTES BILD -->
+
+    <figure class="hero-image">
+        <img src="./bild1.jpeg" alt="Bild 1">
+        <figcaption>
+            Ein Schüler wird schwer verletzt (im Krankenwagen).
+            Ein Schüler stirbt nach Selbstmord (im Leichenwagen).
+        </figcaption>
+    </figure>
+
+
+    <div class="article-layout">
+
+        <article class="article-text">
+
+            <p>
+                Heute Nachmittag haben Zeugen Schüsse aus der Aula des
+                Marie-Curie Gymnasiums gehört und die Polizei und einen
+                Krankenwagen herbei gerufen.
+            </p>
+
+            <p>
+                Anscheinend hat ein Schüler eine Schusswaffe mit zum
+                Unterricht genommen und hat erst einen Mitschüler schwer
+                verletzt und danach sich selbst getötet.
+            </p>
+
+            <p>
+                Der Grund ist bislang noch ungeklärt.
+            </p>
+
+            <p>
+                Ein paar Minuten später, wurde ein Lehrer namens Rainer
+                Wenger von der Polizei heraus eskortiert.
+            </p>
+
+            <p>
+                Laut Zeugen ist er für das Ganze verantwortlich.
+            </p>
+
+            <p>
+                Die meisten Schüler und Schülerinnen befinden sich in einem
+                Schweren Schockzustand und sind sehr verstört.
+            </p>
+
+        </article>
+
+
+        <!-- SEITENSPALTE -->
+
+        <aside class="sidebar">
+
+            <h3>IM FOKUS</h3>
+
+            <img src="./bild2.jpeg" alt="Bild 2">
+
+            <p>
+                Rainer Wenger, der Leiter des Schülerprojekts,
+                der mutmaßlich für das Ganze verantwortlich ist.
+            </p>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<footer>
+    DIE TAGESCHRONIK · DIGITALE AUSGABE<br><br>
+    Dieser Beitrag ist vollständig fiktiv und dient ausschließlich
+    als Satire-/Filmrequisit. Er beschreibt kein reales Ereignis
+    und erhebt keine tatsächlichen Vorwürfe gegen Personen oder Schulen.
+</footer>
+
+</body>
+</html>
